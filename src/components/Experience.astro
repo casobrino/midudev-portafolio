@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    title: "Software Engineer",
+    company: "Google",
+    date: "2020 - Present",
+    description:
+      "I work on the Google Search team, where I help millions of users find the information they are looking for.",
+  },
+  {
+    title: "Software Engineer",
+    company: "Facebook",
+    date: "2018 - 2020",
+    description:
+      "I worked on the Facebook Marketplace team, where I helped connect buyers and sellers in their local communities.",
+  },
+  {
+    title: "Software Engineer",
+    company: "Microsoft",
+    date: "2016 - 2018",
+    description:
+      "I worked on the Windows team, where I helped build the next generation of Windows.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map((item) => (
+      <li class="mb-10 ms-4">{<ExperienceItem {...item} />}</li>
+    ))
+  }
+</ol>
