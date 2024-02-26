@@ -1,0 +1,53 @@
+---
+import NextJS from "../icons/next-js.astro";
+import Tailwind from "../icons/tailwind.astro";
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+};
+const PROJECTS = [
+  {
+    title: "KIKOYA",
+    description:
+      "Trabaje en este proyecto como desarrollador fullstack, utilizando tecnologías como React, Node.js, Express, MongoDB, entre otras. El proyecto consiste en una plataforma de e-commerce para la venta de productos de belleza y cuidado personal.",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    github: "https://github.com/casobrino",
+    image: "/kikoya.jpg",
+  },
+];
+---
+
+<div>
+  {console.log(PROJECTS.length)}
+  {
+    PROJECTS.map(({ title, description, tags, image }) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul>
+          {tags.map((tag) => (
+            <li>
+              <span class={`${tag.class} flex gap-x-2 rounded-full xs`}>
+                <tag.icon class="size-6" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          class="rounded shadow-2xl shadow-white/20"
+          src={image}
+          alt={title}
+        />
+      </article>
+    ))
+  }
+</div>

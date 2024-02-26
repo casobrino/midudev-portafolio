@@ -4,20 +4,24 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Badge from "../components/Badge.astro";
 import Social from "../components/Social.astro";
 import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 
 import LinkedIdIcon from "../icons/linked-in.astro";
 import GithubIcon from "../icons/github.astro";
 import MailIcon from "../icons/mail.astro";
 import PortfolioIcon from "../icons/portfolio.astro";
+import CodeIcon from "../icons/code.astro";
 ---
 
 <Layout
   title="Portfolio casobrino"
   description="Desarrollador y programador web de Merida Yucatan"
 >
-  <main>
+  <main class="px-4">
     <SectionContainer class="pt-44 pb-24">
-      <h1 class="font-bold text-white text-5xl flex flex-row gap-x-5 pb-4">
+      <h1
+        class="font-bold text-white text-2xl lg:text-5xl flex flex-row gap-x-5 lg:pb-10 pb-6"
+      >
         Hello! soy Sobrino
         <div class="flex items-center">
           <a href="#" rel="noopener" target="_blank" class="flex items-center">
@@ -25,32 +29,38 @@ import PortfolioIcon from "../icons/portfolio.astro";
           </a>
         </div>
       </h1>
-      <h2 class="text-xl text-wrap">
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
         <span>+2 años de experiencia.</span> Desarrollador Web de Yucatán, México.
         Desarrollador de Software que sueña con un mundo mejor. Lorem ipsum dolor
         sit amet, consectetur adipisicing elit. Hic sapiente optio perspiciatis voluptatum.
         Deserunt doloremque, sit minus sequi totam.
       </h2>
-      <nav class="flex gap-2 my-10 justify-center">
+      <nav class="flex gap-2 my-10 justify-center flex-wrap">
         <Social href="https://linkedin/in/casobrino.com">
-          <LinkedIdIcon class="size-6" />
+          <LinkedIdIcon class="size-6 md:size-6" />
           LinkedIn
         </Social>
         <Social href="https://linkedin/in/casobrino.com">
-          <GithubIcon class="size-6" />
+          <GithubIcon class="size-6 md:size-6" />
           Github
         </Social>
         <Social href="mailto:casobrino_0@hotmail.com">
-          <MailIcon class="size-6" />
-          Email
+          <MailIcon class="size-6 md:size-6" />
+          casobrino_0@hotmail.com
         </Social>
       </nav>
     </SectionContainer>
     <SectionContainer id="experiencia">
-      <h2 class="2xl font-semibold mb-6 flex gap-x-2">
+      <h2 class="3xl font-semibold mb-6 flex gap-x-2">
         <PortfolioIcon class="size-6" /> Experiencia laboral
       </h2>
       <Experience />
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      <h2 class="3xl font-semibold mb-6 flex gap-x-2">
+        <CodeIcon class="size-5" /> Proyectos
+      </h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>
