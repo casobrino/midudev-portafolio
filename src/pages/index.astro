@@ -1,16 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Badge from "../components/Badge.astro";
-import Social from "../components/Social.astro";
-import Experience from "../components/Experience.astro";
-import Projects from "../components/Projects.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Badge from "@/components/Badge.astro";
+import Experience from "@/components/Experience.astro";
+import Layout from "@/layouts/Layout.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Social from "@/components/Social.astro";
 
-import LinkedIdIcon from "../icons/linked-in.astro";
-import GithubIcon from "../icons/github.astro";
-import MailIcon from "../icons/mail.astro";
-import PortfolioIcon from "../icons/portfolio.astro";
-import CodeIcon from "../icons/code.astro";
+import CodeIcon from "@/icons/code.astro";
+import GithubIcon from "@/icons/github.astro";
+import LinkedIdIcon from "@/icons/linked-in.astro";
+import MailIcon from "@/icons/mail.astro";
+import PortfolioIcon from "@/icons/portfolio.astro";
+import User from "@/icons/user.astro";
 ---
 
 <Layout
@@ -19,12 +21,22 @@ import CodeIcon from "../icons/code.astro";
 >
   <main class="px-4">
     <SectionContainer class="pt-44 pb-24">
+      <img
+        src="https://avatars.githubusercontent.com/u/19161397?v=4"
+        class="rounded-full w-12 h-12 items-center opacity"
+        alt="casophoto"
+      />
       <h1
         class="font-bold text-white text-2xl lg:text-5xl flex flex-row gap-x-5 lg:pb-10 pb-6"
       >
         Hello! soy Sobrino
         <div class="flex items-center">
-          <a href="#" rel="noopener" target="_blank" class="flex items-center">
+          <a
+            href="linkeding.com/in/casobrino"
+            rel="noopener"
+            target="_blank"
+            class="flex items-center"
+          >
             <Badge>Disponible para trabajar</Badge>
           </a>
         </div>
@@ -61,6 +73,12 @@ import CodeIcon from "../icons/code.astro";
         <CodeIcon class="size-5" /> Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <h2 class="3xl font-semibold mb-6 flex gap-x-2">
+        <User class="size-5" /> Sobre mi
+      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>

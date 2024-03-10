@@ -1,6 +1,8 @@
 ---
+import Github from "@/icons/github.astro";
 import NextJS from "../icons/next-js.astro";
 import Tailwind from "../icons/tailwind.astro";
+import LinkButton from "./LinkButton.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -20,22 +22,33 @@ const PROJECTS = [
       "Trabaje en este proyecto como desarrollador fullstack, utilizando tecnologías como React, Node.js, Express, MongoDB, entre otras. El proyecto consiste en una plataforma de e-commerce para la venta de productos de belleza y cuidado personal.",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
     github: "https://github.com/casobrino",
+    link: "https://kikoya.com",
+    image: "/kikoya.jpg",
+  },
+  {
+    title: "KIKOYA",
+    description:
+      "Trabaje en este proyecto como desarrollador fullstack, utilizando tecnologías como React, Node.js, Express, MongoDB, entre otras. El proyecto consiste en una plataforma de e-commerce para la venta de productos de belleza y cuidado personal.",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    github: "https://github.com/casobrino",
+    link: "https://kikoya.com",
     image: "/kikoya.jpg",
   },
 ];
 ---
 
-<div>
-  {console.log(PROJECTS.length)}
+<div class="mb-40">
   {
-    PROJECTS.map(({ title, description, tags, image }) => (
-      <article>
+    PROJECTS.map(({ title, description, tags, image, github, link }) => (
+      <article class="mb-12">
         <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
         <p class="text-lg mb-4 text-pretty">{description}</p>
-        <ul>
+        <ul class="flex gap-x-2 flex-row">
           {tags.map((tag) => (
             <li>
-              <span class={`${tag.class} flex gap-x-2 rounded-full xs`}>
+              <span
+                class={`${tag.class} flex gap-x-2 rounded-full text-xs py-1 px-2 items-center`}
+              >
                 <tag.icon class="size-6" />
                 {tag.name}
               </span>
@@ -43,10 +56,39 @@ const PROJECTS = [
           ))}
         </ul>
         <img
-          class="rounded shadow-2xl shadow-white/20"
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/20 aspect-video"
           src={image}
           alt={title}
         />
+        <footer class="flex gap-x-4 py-5">
+          {github && (
+            <LinkButton href={github}>
+              <Github class="size-6" /> Ver en Github
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <svg
+                class="size-6"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 15l6 -6" />
+                  <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+                  <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+                </>
+              </svg>
+              Ir al sitio
+            </LinkButton>
+          )}
+        </footer>
       </article>
     ))
   }

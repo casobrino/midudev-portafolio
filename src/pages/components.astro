@@ -1,0 +1,29 @@
+---
+import Badge from "@/components/Badge.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Social from "@/components/Social.astro";
+import Layout from "@/layouts/Layout.astro";
+import GithubIcon from "@/icons/github.astro";
+---
+
+<Layout
+  title="Desingn sistem.dev"
+  description="El catalogo de componentes de nuestro portfolio"
+>
+  <SectionContainer>
+    <article>
+      <h1 class="mb-10 text-xl font-bold">&lt;Badget /&gt;</h1>
+      <Badge>Badge</Badge>
+      <Badge>Badge</Badge>
+    </article>
+    <article>
+      <h1 class="mb-10 text-xl font-bold">&lt;Social /&gt;</h1>
+      <div class="flex">
+        <Social href="https://linkedin/in/casobrino.com">
+          <GithubIcon class="size-6 md:size-6" />
+          Github
+        </Social>
+      </div>
+    </article>
+  </SectionContainer>
+</Layout>
